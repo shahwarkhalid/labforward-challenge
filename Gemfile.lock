@@ -1,3 +1,50 @@
+GIT
+  remote: https://github.com/rspec/rspec-core.git
+  revision: e36aa2a9ebe68acee3ce05190fc2124947b45925
+  branch: main
+  specs:
+    rspec-core (3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-expectations.git
+  revision: dba67987c63f551d1bf0f7877f069fa8b72d0461
+  branch: main
+  specs:
+    rspec-expectations (3.11.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-mocks.git
+  revision: 17cf86ab61544b93232c4e9ca9784ab212dccbf6
+  branch: main
+  specs:
+    rspec-mocks (3.11.0.pre)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-rails.git
+  revision: cfe4db707cc5a0c9437aa90e3059256f30368da4
+  branch: main
+  specs:
+    rspec-rails (5.1.0.pre)
+      actionpack (>= 5.2)
+      activesupport (>= 5.2)
+      railties (>= 5.2)
+      rspec-core (= 3.11.0.pre)
+      rspec-expectations (= 3.11.0.pre)
+      rspec-mocks (= 3.11.0.pre)
+      rspec-support (= 3.11.0.pre)
+
+GIT
+  remote: https://github.com/rspec/rspec-support.git
+  revision: 9499cb622f9feef43a53f357809f9e656e7cb6de
+  branch: main
+  specs:
+    rspec-support (3.11.0.pre)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -60,18 +107,55 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    addressable (2.8.0)
+      public_suffix (>= 2.0.2, < 5.0)
+    bcrypt (3.1.16)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
     concurrent-ruby (1.1.9)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
+    devise (4.8.0)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0)
+      responders
+      warden (~> 1.2.3)
+    devise-jwt (0.9.0)
+      devise (~> 4.0)
+      warden-jwt_auth (~> 0.6)
+    diff-lcs (1.4.4)
+    dry-auto_inject (0.8.0)
+      dry-container (>= 0.3.4)
+    dry-configurable (0.13.0)
+      concurrent-ruby (~> 1.0)
+      dry-core (~> 0.6)
+    dry-container (0.9.0)
+      concurrent-ruby (~> 1.0)
+      dry-configurable (~> 0.13, >= 0.13.0)
+    dry-core (0.7.1)
+      concurrent-ruby (~> 1.0)
     erubi (1.10.0)
+    factory_bot (6.2.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.4)
     globalid (0.5.2)
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
+    jwt (2.3.0)
     listen (3.7.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -88,7 +172,9 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
+    orm_adapter (0.5.0)
     pg (1.2.3)
+    public_suffix (4.0.6)
     puma (5.5.2)
       nio4r (~> 2.0)
     racc (1.6.0)
@@ -125,6 +211,23 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
+    responders (3.0.1)
+      actionpack (>= 5.0)
+      railties (>= 5.0)
+    rspec (1.3.2)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
+    rswag-api (2.4.0)
+      railties (>= 3.1, < 7.0)
+    rswag-specs (2.4.0)
+      activesupport (>= 3.1, < 7.0)
+      json-schema (~> 2.2)
+      railties (>= 3.1, < 7.0)
+    rswag-ui (2.4.0)
+      actionpack (>= 3.1, < 7.0)
+      railties (>= 3.1, < 7.0)
+    shoulda-matchers (5.0.0)
+      activesupport (>= 5.2.0)
     spring (3.0.0)
     sprockets (4.0.2)
       concurrent-ruby (~> 1.0)
@@ -136,6 +239,13 @@ GEM
     thor (1.1.0)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
+    warden (1.2.9)
+      rack (>= 2.0.9)
+    warden-jwt_auth (0.6.0)
+      dry-auto_inject (~> 0.8)
+      dry-configurable (~> 0.13)
+      jwt (~> 2.1)
+      warden (~> 1.2)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
@@ -147,10 +257,25 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
+  database_cleaner
+  devise
+  devise-jwt
+  factory_bot_rails
   listen (~> 3.3)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 6.1.4, >= 6.1.4.1)
+  rspec
+  rspec-core!
+  rspec-expectations!
+  rspec-mocks!
+  rspec-rails!
+  rspec-support!
+  rspec_junit_formatter
+  rswag-api
+  rswag-specs
+  rswag-ui
+  shoulda-matchers
   spring
   tzinfo-data
 

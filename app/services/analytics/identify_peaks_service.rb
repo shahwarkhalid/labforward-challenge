@@ -3,7 +3,7 @@ module Analytics
     attr_accessor :data, :threshold
 
     def initialize(data:, threshold:)
-      self.data = data.map(&:to_i)
+      self.data = data.map(&:to_f)
       self.threshold = threshold.to_i
     end
 

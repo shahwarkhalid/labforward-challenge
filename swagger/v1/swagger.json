@@ -1,0 +1,181 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "API V1",
+    "version": "v1"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  },
+  "paths": {
+    "/v1/analytics/identify_peaks": {
+      "post": {
+        "summary": "Identify peaks",
+        "security": [
+          {
+            "bearerAuth": [
+
+            ]
+          }
+        ],
+        "tags": [
+          "Analytics"
+        ],
+        "operationId": "identify_peaks",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfully returns signal data."
+          },
+          "422": {
+            "description": "Returns error response when data array is not sent or threshold is not sent."
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/identify_peaks"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/sign_in": {
+      "post": {
+        "summary": "User Sign-in",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "sign_in",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull Login"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/sign_in"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users": {
+      "post": {
+        "summary": "User Sign-Up",
+        "tags": [
+          "Authentication"
+        ],
+        "operationId": "sign_up",
+        "parameters": [
+
+        ],
+        "responses": {
+          "200": {
+            "description": "Successfull registered"
+          }
+        },
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/definitions/sign_up"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "sign_in": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "user": {
+          "email": "user_1@abc.com",
+          "password": "password"
+        }
+      }
+    },
+    "sign_up": {
+      "type": "object",
+      "properties": {
+        "email": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "example": {
+        "user": {
+          "email": "john@abc.com",
+          "password": "password"
+        }
+      }
+    },
+    "identify_peaks": {
+      "type": "object",
+      "properties": {
+        "data": {
+          "type": "array"
+        },
+        "threshold": {
+          "type": "integer"
+        }
+      },
+      "example": {
+        "data": [
+          1,
+          1.1,
+          0.9,
+          1,
+          1,
+          1.2,
+          2.5,
+          2.3,
+          2.4,
+          1.1,
+          0.8,
+          1.2,
+          1
+        ],
+        "threshold": 1
+      }
+    }
+  },
+  "securityDefinitions": {
+    "bearerAuth": {
+      "type": "apiKey",
+      "scheme": "bearer",
+      "bearerFormat": "JWT",
+      "in": "header",
+      "description": "JWT Authorization header using the Bearer scheme. Example: Authorization: Bearer {token}",
+      "name": "Authorization"
+    }
+  }
+}
