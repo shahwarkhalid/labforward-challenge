@@ -1,24 +1,20 @@
-# README
+# labforward-challenge
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+- Ruby 2.7.4
+- Rails 6.1.4
+- PostgreSQL
 
-Things you may want to cover:
+project setup instructions
 
-* Ruby version
+# project setup steps
 
-* System dependencies
+- bundle install
+- rails db:create
+- rails db:migrate
+- rails db:seed
 
-* Configuration
+# editing credentials
+  You need master key to edit the credentials. Contact developer or get from heroku config.
 
-* Database creation
+  EDITOR=nano rails credentials:edit
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
