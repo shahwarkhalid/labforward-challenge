@@ -18,9 +18,6 @@ project setup instructions
 
   EDITOR=nano rails credentials:edit
 
-# demo
-  https://www.loom.com/share/9a97fcedd5284b30ab0aa74bb70be963
-
 # heroku site
   https://labforward-challenge.herokuapp.com/api-docs/index.html
 
